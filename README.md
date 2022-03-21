@@ -22,3 +22,93 @@ GO advantages :
 | Error Handling | Explicit | Built in |
 | Multi Tasking | Multi-Threaded (Concurrency, Goroutines, Sync) | Single-Threaded (Callbacks, async await, sagas, sadness) |
 | Opiniated-ness | Strong Opinions (Convention, built in tooling and linters) | Fluid Opinions (Subjective to the mood that day) |
+
+### Anatomy of GO file
+![anatomy](img-4.png)
+
+# Printing
+### Printing with `fmt`
+![printing 1](img-5.png)
+
+# Basic GO Syntax
+### Types
+![types 1](img-6.png)
+
+### Variables
+A variable is a piece of storage containing data temporarily to work with it. The most general form to declare a variable in Golang uses the var keyword, an explicit type, and an assignment.
+
+> var name type = expression
+
+### Control Structures - IF & ELSE
+```
+var someVar = 9
+
+if someVar > 100 {
+  fmt.Println("greater than 100")
+} else if someVar  == 100 {
+  fmt.Println("equals 100")
+} else {
+  fmt.Println("less than 100")
+}
+```
+
+### Control Structures - Switch Statements
+```
+var city string
+
+switch city{
+case "Des Moines":
+     fmt.Println("you live in iowa")
+case "Minneapolis,","St Paul":
+     fmt.Println("you live in minnesota")
+case "Madison":
+     fmt.Println("you live in wisconsin")
+default:
+     fmt.Println("you are not from around here")
+}
+```
+
+### Control Structures - For Loops
+```
+for i := 1; i <= 100; i++ {
+  fmt.Println(i)
+} 
+
+var mySentence = "this is sentence"
+
+for index, letter := range mySentence{
+  fmt.Println("Index:", index, "Letter:", string(letter))
+}
+```
+
+# Complex Structures
+### Functions & Variadic Functions
+A function is a group of statements that exist within a program for the purpose of performing a specific task. At a high level, a function takes an input and returns an output. Function allows you to extract commonly used block of code into a single component.
+```
+func printAge(age int) int {
+  fmt.Println(age)
+  return age
+}
+```
+
+### Arrays
+| GO | JS |
+| ------------- | ------------- |
+| ![go](img-7.png) | ![js](img-8.png) |
+
+### Make
+`make` is a built-in slice function used to create a slice. The `make` function takes three arguments: type, length, and capacity, and returns the slice. To create dynamically sized arrays, use the `make` function. The `make` function allocates a zeroed array and returns a slice that refers to that array.
+
+![make](img-9.png)
+
+### Slices
+`Slices` are a key data type in Go, giving a more powerful interface to sequences than arrays. Unlike arrays, `slices` are typed only by the elements they contain (not the number of elements). To create an empty slice with non-zero length, use the builtin make. Here we make a slice of strings of length 3 (initially zero-valued).
+
+![slice](img-10.png)
+
+### Maps
+`Maps` is a collection of unordered pairs of key-value. It is widely used because it provides fast lookups and values that can retrieve, update or delete with the help of keys. It is a reference to a hash table.
+
+![maps](img-11.png)
+
+# GO Toolkit
